@@ -7,7 +7,11 @@ import {
   WrapItem,
   Text,
   Center,
+  TagLeftIcon,
+  Tag,
+  TagLabel,
 } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
 
 export default function Pics(props) {
@@ -32,11 +36,17 @@ export default function Pics(props) {
       <Center>
         <Divider orientation="vertical" h="50px"></Divider>
       </Center>
-      <Stack>
+      <Box textAlign="center">
         <Text size="lg" textAlign="center">
           Torna domani! 😜
         </Text>
-      </Stack>
+        <a href="https://github.com/matteomad1011/avvento-elis">
+          <Tag mt={2}>
+            <TagLeftIcon as={CheckIcon} />
+            <TagLabel>Contribuisci su GitHub!</TagLabel>
+          </Tag>
+        </a>
+      </Box>
     </Box>
   );
 }
