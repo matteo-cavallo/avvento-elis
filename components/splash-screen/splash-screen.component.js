@@ -24,7 +24,7 @@ export default function SplashScreen({ handleClick }) {
 
   return (
     <Box>
-      <Center h="80vh">
+      <Center h="70vh">
         <Box maxW="32rem" textAlign="center">
           <Heading mb={8}>Avvento dell'Elis 🎄</Heading>
           <Container>
@@ -41,7 +41,7 @@ export default function SplashScreen({ handleClick }) {
           <Box hidden={spinner}></Box>
         </Box>
       </Center>
-      <Center>
+      <Center h="30vh">
         <Stack align="center">
           <Spinner hidden={spinner} color="red.500" />
           <Text>
