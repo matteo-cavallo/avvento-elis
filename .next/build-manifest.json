@@ -1,33 +1,37 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-b14b5a3c1c7e241af98d.js"
   ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/amp.js"
-  ],
+  "devFiles": [],
+  "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
+    "static/6ka0FDJDYNCS5EvEciqOZ/_buildManifest.js",
+    "static/6ka0FDJDYNCS5EvEciqOZ/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/main-1660459b730bdeee5cc8.js",
+      "static/chunks/webpack-eb080e3f091731f228fb.js",
+      "static/chunks/framework.ef157c678a62cfb2c073.js",
+      "static/chunks/commons.c74055c7968bdf048fe3.js",
+      "static/chunks/71247caf95475e3ea7f9a0f8a30beb258b23d005.3d747472cd1843c19712.js",
+      "static/chunks/pages/index-f2e3dffa910b0e2861b6.js"
     ],
     "/_app": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/main-1660459b730bdeee5cc8.js",
+      "static/chunks/webpack-eb080e3f091731f228fb.js",
+      "static/chunks/framework.ef157c678a62cfb2c073.js",
+      "static/chunks/commons.c74055c7968bdf048fe3.js",
+      "static/chunks/71247caf95475e3ea7f9a0f8a30beb258b23d005.3d747472cd1843c19712.js",
+      "static/chunks/f6078781a05fe1bcb0902d23dbbb2662c8d200b3.4c4743c523be6b4c76c8.js",
+      "static/chunks/pages/_app-5dd8a2d9697623af9cb8.js"
     ],
     "/_error": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/main-1660459b730bdeee5cc8.js",
+      "static/chunks/webpack-eb080e3f091731f228fb.js",
+      "static/chunks/framework.ef157c678a62cfb2c073.js",
+      "static/chunks/commons.c74055c7968bdf048fe3.js",
+      "static/chunks/pages/_error-60c308b973d8359834fd.js"
     ]
   },
   "ampFirstPages": []
