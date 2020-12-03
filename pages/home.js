@@ -11,8 +11,6 @@ import Header from "../components/header/header.component";
 function HomePage() {
   return (
     <Box>
-      <Header></Header>
-
       <Pics></Pics>
     </Box>
   );

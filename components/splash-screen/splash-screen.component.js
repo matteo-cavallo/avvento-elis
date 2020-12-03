@@ -24,7 +24,7 @@ export default function SplashScreen({ handleClick }) {
 
   return (
     <Box>
-      <Center h="100vh">
+      <Center h="80vh">
         <Box maxW="32rem" textAlign="center">
           <Heading mb={8}>Avvento dell'Elis 🎄</Heading>
           <Container>
