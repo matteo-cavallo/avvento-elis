@@ -32,7 +32,7 @@ function Pics(props) {
     <Stack p={4} spacing={6}>
       <Box>
         <Heading mb={4} size="lg">
-          🤷🏼‍♂️ Ecco il creatore...
+          🤷🏼‍♂️ Da un'idea di...
         </Heading>
         <Pic
           idle
