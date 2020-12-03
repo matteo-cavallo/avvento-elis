@@ -1,19 +1,26 @@
-import { AspectRatio, Box, Heading, Image, Skeleton } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Center,
+  Flex,
+  Heading,
+  Image,
+  Skeleton,
+} from "@chakra-ui/react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Pic(props) {
-  const { numero } = props;
-  const [loading, setLoading] = useState(false);
-
-  setTimeout(() => {
-    setLoading(true);
-  }, 1500);
+  const { title, img, src, idle, day } = props;
+  const router = useRouter();
 
   // Rotazione della fotografia in gradi
   const rotation = Math.floor(Math.random() * 6);
+  const [loaded, setLoaded] = useState(false);
 
   const handleClick = () => {
-    alert("Coming Soon");
+    console.log(img);
+    if (!idle && img) router.push(`/video/${src}`);
   };
 
   return (
@@ -25,25 +32,24 @@ export default function Pic(props) {
         pt={2}
         px={2}
         m={2}
-        w={["150px", "200px", "300px", "350px"]}
+        border="1px"
+        borderColor="gray.200"
+        maxW="300px"
       >
-        <Skeleton isLoaded={loading}>
+        <Skeleton isLoaded={loaded}>
           <AspectRatio ratio={1}>
-            <Image src={`/pics/${numero}.jpg`} />
+            <Image
+              src={img}
+              bgPos="center"
+              bgSize="cover"
+              onLoad={() => setLoaded(true)}
+            ></Image>
           </AspectRatio>
         </Skeleton>
         <Heading textAlign="center" pt={2} pb={2} size="s">
-          {numero} DICEMBRE
+          {title}
         </Heading>
       </Box>
     </Box>
   );
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      rotation: rotation,
-    }, // will be passed to the page component as props
-  };
 }

@@ -5,8 +5,7 @@ import Pics from "../pics/pics.component";
 export default function Home() {
   return (
     <Box>
-      <Header></Header>
-      <Pics title="Che bei ricordi..."></Pics>
+      <Pics></Pics>
     </Box>
   );
 }

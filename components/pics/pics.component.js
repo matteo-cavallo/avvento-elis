@@ -10,43 +10,49 @@ import {
   TagLeftIcon,
   Tag,
   TagLabel,
+  Flex,
+  pseudoSelectors,
+  Grid,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
 
-export default function Pics(props) {
+import { firestore, storage } from "../../firebase/firebase.config";
+import { useEffect, useState } from "react";
+import useFirestore from "../../hooks/useFirestore";
+
+function Pics(props) {
   const { title } = props;
 
-  const items = [1];
+  const { docs } = useFirestore("video");
+  console.log(docs);
 
   return (
-    <Box p={2}>
-      <Heading color="gray.600" pb={3}>
-        {title}
-      </Heading>
-      <Wrap justify="center">
-        {items.map((item) => {
-          return (
-            <WrapItem>
-              <Pic numero={item} />
-            </WrapItem>
-          );
-        })}
-      </Wrap>
-      <Center>
-        <Divider orientation="vertical" h="50px"></Divider>
-      </Center>
-      <Box textAlign="center">
-        <Text size="lg" textAlign="center">
-          Torna domani! 😜
-        </Text>
-        <a href="https://github.com/matteomad1011/avvento-elis">
-          <Tag mt={2}>
-            <TagLeftIcon as={CheckIcon} />
-            <TagLabel>Contribuisci su GitHub!</TagLabel>
-          </Tag>
-        </a>
+    <Stack p={4} spacing={6}>
+      <Box>
+        <Heading mb={4} size="lg">
+          🤷🏼‍♂️ Ecco il creatore...
+        </Heading>
+        <Pic idle img="/1.jpg" numero={1} title="Lorenzo Manoni (BigHands)" />
       </Box>
-    </Box>
+      <Box>
+        <Heading size="lg">📆 Calendario</Heading>
+        <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
+          {docs &&
+            docs.map((pic) => (
+              <Pic
+                key={pic.id}
+                img={pic.thumbnail}
+                title={`${pic.title}`}
+                src={pic.id}
+                day={pic.giorno}
+              />
+            ))}
+        </SimpleGrid>
+      </Box>
+    </Stack>
   );
 }
+
+export default Pics;

@@ -1,0 +1,18 @@
+import { useState } from "react";
+
+import SplashScreen from "../components/splash-screen/splash-screen.component";
+import Home from "../components/home/home.component";
+
+import { firestore, storage } from "../firebase/firebase.config";
+import { Box } from "@chakra-ui/react";
+import Pics from "../components/pics/pics.component";
+
+function HomePage() {
+  return (
+    <Box>
+      <Pics></Pics>
+    </Box>
+  );
+}
+
+export default HomePage;

@@ -24,7 +24,7 @@ export default function SplashScreen({ handleClick }) {
 
   return (
     <Box>
-      <Center h="70vh">
+      <Center h="100vh">
         <Box maxW="32rem" textAlign="center">
           <Heading mb={8}>Avvento dell'Elis 🎄</Heading>
           <Container>
@@ -35,22 +35,16 @@ export default function SplashScreen({ handleClick }) {
             Ringrazia La geniale mente di{" "}
             <Text color="blue.300">@bighands</Text>
           </Container>
-          <Button size="lg" colorScheme="green" mt="24px" onClick={close}>
+          <Button
+            leftIcon={<Spinner hidden={spinner} color="white.500" />}
+            size="lg"
+            colorScheme="green"
+            mt="24px"
+            onClick={close}
+          >
             Entra
           </Button>
-          <Box hidden={spinner}></Box>
         </Box>
-      </Center>
-      <Center h="30vh">
-        <Stack align="center">
-          <Spinner hidden={spinner} color="red.500" />
-          <Text>
-            Powered by{" "}
-            <Text display="inline-block" color="blue.300">
-              @matteomad
-            </Text>
-          </Text>
-        </Stack>
       </Center>
     </Box>
   );
