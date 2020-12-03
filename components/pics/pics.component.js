@@ -34,7 +34,12 @@ function Pics(props) {
         <Heading mb={4} size="lg">
           🤷🏼‍♂️ Ecco il creatore...
         </Heading>
-        <Pic idle img="/1.jpg" numero={1} title="Lorenzo Manoni (BigHands)" />
+        <Pic
+          idle
+          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2F1.JPG?alt=media&token=4407547b-ddcc-4f31-8c0c-c56d9e2091ed"
+          numero={1}
+          title="Lorenzo Manoni (BigHands)"
+        />
       </Box>
       <Box>
         <Heading size="lg">📆 Calendario</Heading>
