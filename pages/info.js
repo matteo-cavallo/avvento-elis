@@ -1,11 +1,24 @@
-import { Box, Divider, Heading, Text } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Center,
+  Container,
+  Divider,
+  Heading,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 export default function InfoPage() {
   return (
     <Box p={4}>
       <Heading mb={4}>Info</Heading>
-      <Heading fontSize="sm">PRIVACY POLICY</Heading>
-      <Text fontSize="xl">
+      <Heading color="gray.600" mb={4} fontSize="sm">
+        PRIVACY POLICY
+      </Heading>
+      <Container fontSize="xl">
         Tutti i contenuti all'interno di questa applicazione non vogliono essere
         in alcun modo offensivi o altro. Tutti i video e le immagini non sono e
         non verrano condivise con nessuno che non sia presente all'interno della
@@ -14,10 +27,29 @@ export default function InfoPage() {
         responsabile della condivisione inopportuna. I dati sono salvati
         interamente su database Firebase e verranno eliminati il 31 di Dicembre
         (a patto di eventuali richieste).
-      </Text>
-      <Divider mt={4}></Divider>
+      </Container>
+      <Heading color="gray.600" mt={8} mb={4} fontSize="sm">
+        OPEN SOURCE
+      </Heading>
+      <Container fontSize="xl">
+        Il progetto non è in alcun modo finanziato o commissionato. E' inoltre
+        ben accetto qualsiasi tipo di miglioramento o aggiornamento: grafico o
+        funzionale
+      </Container>
+      <Heading color="gray.600" mt={8} mb={4} fontSize="sm">
+        BRANCH
+      </Heading>
+      <Container>
+        <Stack direction="row" align="center">
+          <Image h="17px" src="/github.png" />
+          <Link href="https://github.com/matteomad1011/avvento-elis">main</Link>
+        </Stack>
+      </Container>
+      <Center>
+        <Divider w="80%" mt={4}></Divider>
+      </Center>
       <Text fontSize="md">
-        Powered by <a></a>@matteocavallo
+        v0.2 - Powered by <a></a>@matteocavallo
       </Text>
     </Box>
   );
