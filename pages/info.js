@@ -23,10 +23,10 @@ export default function InfoPage() {
         in alcun modo offensivi o altro. Tutti i video e le immagini non sono e
         non verrano condivise con nessuno che non sia presente all'interno della
         crew dell'ELIS. Ogni persona che ottiene l'accesso a questa app tramite
-        il link 'https://avvento-elis-cs87dbnn9.vercel.app/' si ritiene
-        responsabile della condivisione inopportuna. I dati sono salvati
-        interamente su database Firebase e verranno eliminati il 31 di Dicembre
-        (a patto di eventuali richieste).
+        il link 'https://avvento-elis.vercel.app/' si ritiene responsabile della
+        condivisione inopportuna. I dati sono salvati interamente su database
+        Firebase e verranno eliminati il 31 di Dicembre (a patto di eventuali
+        richieste).
       </Container>
       <Heading color="gray.600" mt={8} mb={4} fontSize="sm">
         OPEN SOURCE

@@ -31,10 +31,6 @@ export default function SplashScreen({ handleClick }) {
             Benvenuti, ragazze e ragazzi all'interno del calendario dell'avvento
             dell'Elis.
           </Container>
-          <Container mt={2}>
-            Ringrazia La geniale mente di{" "}
-            <Text color="blue.300">@bighands</Text>
-          </Container>
           <Button
             leftIcon={<Spinner hidden={spinner} color="white.500" />}
             size="lg"
