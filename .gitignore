@@ -24,4 +24,3 @@ yarn-error.log*
 
 .next
 
-/firebase/firebase.credentials.js
