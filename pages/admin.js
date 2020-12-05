@@ -224,14 +224,17 @@ export default function AdminPage({ events }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   let events = [];
 
+  //console.log("STATIC");
   //Fetch videos from Firestore
   const videos = await firestore
     .collection("video")
     .orderBy("giorno", "desc")
     .get();
+
+  console.log(videos);
 
   videos.forEach((video) => {
     let { title, giorno } = video.data();
