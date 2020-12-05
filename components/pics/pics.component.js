@@ -26,7 +26,6 @@ function Pics(props) {
   const { title } = props;
 
   const { docs } = useFirestore("video");
-  console.log(docs);
 
   return (
     <Stack p={4} spacing={6}>
@@ -50,10 +49,11 @@ function Pics(props) {
               <Pic
                 key={pic.id}
                 img={pic.thumbnail}
-                title={`${pic.title}`}
+                title={pic.title}
                 src={pic.id}
                 day={pic.giorno}
                 url={pic.src}
+                idle={false}
               />
             ))}
         </SimpleGrid>

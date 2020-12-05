@@ -23,12 +23,8 @@ export default function Pic(props) {
   const [loaded, setLoaded] = useState(false);
 
   const handleClick = () => {
-    console.log(img);
     if (!idle && img) router.push(`/video/${src}`);
   };
-
-  console.log(day, url);
-
   return (
     <Box>
       <Box
@@ -43,38 +39,33 @@ export default function Pic(props) {
         borderColor="gray.200"
         maxW="300px"
       >
-        <Skeleton isLoaded={loaded}>
-          <AspectRatio ratio={1}>
-            {!idle ? (
-              <Box
-                w="100%"
-                border="2px"
-                borderColor="gray.100"
-                boxShadow="inner"
-              >
-                <Flex flexDirection="column" w="100%" h="100%">
-                  <Box>
-                    <Flex p={1}>
-                      <Spacer></Spacer>
-                      <Icon as={BsFillPlayFill} w={8} h={8} />
-                    </Flex>
-                  </Box>
+        <AspectRatio ratio={1}>
+          {!idle ? (
+            <Box w="100%" border="2px" borderColor="gray.100" boxShadow="inner">
+              <Flex flexDirection="column" w="100%" h="100%">
+                <Box>
+                  <Flex p={1}>
+                    <Spacer></Spacer>
+                    <Icon as={BsFillPlayFill} w={8} h={8} />
+                  </Flex>
+                </Box>
 
-                  <Center flex="1">
-                    <Heading bgColor="red.300">🎄{day} dic</Heading>
-                  </Center>
-                </Flex>
-              </Box>
-            ) : (
+                <Center flex="1">
+                  <Heading bgColor="red.300">🎄{day} dic</Heading>
+                </Center>
+              </Flex>
+            </Box>
+          ) : (
+            <Box>
               <Image
                 src={img}
                 bgPos="center"
                 bgSize="cover"
                 onLoad={() => setLoaded(true)}
               ></Image>
-            )}
-          </AspectRatio>
-        </Skeleton>
+            </Box>
+          )}
+        </AspectRatio>
         <Heading textAlign="center" pt={2} pb={2} size="s">
           {title}
         </Heading>
