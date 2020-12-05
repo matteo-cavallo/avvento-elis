@@ -59,6 +59,7 @@ export default function AdminPage({ events }) {
     setLoading(false);
 
     if (form.video && form.thumb) {
+      /*
       //Save video
       const storageRefVideo = storage.ref("video/" + form.video.name);
       await storageRefVideo.put(form.video).catch((e) => {
@@ -67,6 +68,8 @@ export default function AdminPage({ events }) {
       const downloadUrlVideo = await storageRefVideo.getDownloadURL();
 
       console.log(downloadUrlVideo);
+
+      */
 
       //Save image
       const storageRefImage = storage.ref("thumb/" + form.thumb.name);
@@ -84,7 +87,7 @@ export default function AdminPage({ events }) {
         .add({
           title: form.title,
           giorno: form.giorno,
-          src: downloadUrlVideo,
+          src: form.video,
           thumbnail: downloadUrlImage,
         })
         .then(function (docRef) {
@@ -194,7 +197,7 @@ export default function AdminPage({ events }) {
                   value={form.date}
                 />
                 <Text>Video</Text>
-                <Input name="video" type="file" w="50%" onChange={loadFile} />
+                <Input name="video" w="50%" onChange={handleChange} />
                 <Text>Miniatura</Text>
                 <Input name="thumb" type="file" w="50%" onChange={loadFile} />
 

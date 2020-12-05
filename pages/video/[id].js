@@ -1,4 +1,12 @@
-import { Box, Divider, Heading, Image, Skeleton, Text } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Divider,
+  Heading,
+  Image,
+  Skeleton,
+  Text,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebase/firebase.config";
@@ -29,11 +37,14 @@ export default function VideoPage() {
         {video && video.giorno + " DICEMBRE"}
       </Heading>
       <Divider mb={2}></Divider>
-      {video && (
-        <video controls>
-          <source src={video.src} type="video/mp4"></source>
-        </video>
-      )}
+      <AspectRatio ratio={9 / 16} maxW="sm">
+        <iframe
+          width="100%"
+          src={video && video.src}
+          allowFullScreen
+          allow="autoplay"
+        ></iframe>
+      </AspectRatio>
     </Box>
   );
 }

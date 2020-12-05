@@ -41,6 +41,7 @@ function Pics(props) {
           title="Lorenzo Manoni (BigHands)"
         />
       </Box>
+
       <Box>
         <Heading size="lg">📆 Calendario</Heading>
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
@@ -52,6 +53,7 @@ function Pics(props) {
                 title={`${pic.title}`}
                 src={pic.id}
                 day={pic.giorno}
+                url={pic.src}
               />
             ))}
         </SimpleGrid>
