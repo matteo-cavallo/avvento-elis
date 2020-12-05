@@ -231,10 +231,8 @@ export async function getServerSideProps(context) {
   //Fetch videos from Firestore
   const videos = await firestore
     .collection("video")
-    .orderBy("giorno", "desc")
+    .orderBy("pubblicazione", "desc")
     .get();
-
-  console.log(videos);
 
   videos.forEach((video) => {
     let { title, giorno } = video.data();
