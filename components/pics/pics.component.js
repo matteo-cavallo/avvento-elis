@@ -31,18 +31,6 @@ function Pics(props) {
   return (
     <Stack p={4} spacing={6}>
       <Box>
-        <Heading mb={4} size="lg">
-          🤷🏼‍♂️ Da un'idea di...
-        </Heading>
-        <Pic
-          idle
-          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2FWhatsApp%20Image%202020-12-05%20at%2020.31.10.jpeg?alt=media&token=1b704ecb-93c3-4906-a182-f9a0799d43ed"
-          numero={1}
-          title="Lorenzo Manoni (BigHands)"
-        />
-      </Box>
-
-      <Box>
         <Heading size="lg">📆 Calendario</Heading>
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
           {docs &&
@@ -58,6 +46,17 @@ function Pics(props) {
               />
             ))}
         </SimpleGrid>
+      </Box>
+      <Box>
+        <Heading mb={4} size="lg">
+          🤷🏼‍♂️ Da un'idea di...
+        </Heading>
+        <Pic
+          idle
+          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2FWhatsApp%20Image%202020-12-05%20at%2020.31.10.jpeg?alt=media&token=1b704ecb-93c3-4906-a182-f9a0799d43ed"
+          numero={1}
+          title="Lorenzo Manoni (BigHands)"
+        />
       </Box>
       <Box>
         <Heading mb={4} size="lg">
