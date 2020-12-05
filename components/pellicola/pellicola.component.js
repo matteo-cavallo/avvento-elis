@@ -50,12 +50,31 @@ export default function Pellicola(props) {
           </Flex>
         </Box>
         <AspectRatio ratio={1}>
-          <Box bgColor="gray.100" h="" boxShadow="inner">
+          <Box
+            bgColor="gray.100"
+            h=""
+            boxShadow="inner"
+            bgImage="url('https://images.pexels.com/photos/3325717/pexels-photo-3325717.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')"
+            bgPosition="center"
+          >
             <Stack>
-              <Heading bgColor="red.300" textAlign="center" size="s">
+              <Heading
+                bgColor="red.300"
+                textAlign="center"
+                size="s"
+                p={1}
+                color="white"
+              >
                 {title}
               </Heading>
-              <Heading textAlign="center">🎄 {day} dic</Heading>
+              <Heading
+                size="md"
+                bgColor="red.300"
+                color="white"
+                textAlign="center"
+              >
+                🎄 {day} dic
+              </Heading>
             </Stack>
           </Box>
         </AspectRatio>
