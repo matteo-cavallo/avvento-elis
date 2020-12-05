@@ -45,7 +45,7 @@ export default function Pic(props) {
       >
         <Skeleton isLoaded={loaded}>
           <AspectRatio ratio={1}>
-            {url ? (
+            {!idle ? (
               <Box
                 w="100%"
                 border="2px"
