@@ -36,7 +36,7 @@ function Pics(props) {
         </Heading>
         <Pic
           idle
-          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2F1.JPG?alt=media&token=4407547b-ddcc-4f31-8c0c-c56d9e2091ed"
+          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2FWhatsApp%20Image%202020-12-05%20at%2020.31.10.jpeg?alt=media&token=1b704ecb-93c3-4906-a182-f9a0799d43ed"
           numero={1}
           title="Lorenzo Manoni (BigHands)"
         />
