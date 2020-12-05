@@ -7,7 +7,9 @@ const useFirestore = (collection) => {
   useEffect(() => {
     const unsub = firestore
       .collection("video")
-      .orderBy("giorno", "desc")
+      .orderBy("pubblicazione", "desc")
+      //.orderBy("giorno", "desc")
+      .where("pubblicazione", "<=", new Date())
       .onSnapshot((snap) => {
         let documents = [];
         snap.forEach((doc) => {

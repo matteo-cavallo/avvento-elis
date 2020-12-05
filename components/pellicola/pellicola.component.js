@@ -25,7 +25,7 @@ export default function Pellicola(props) {
   const [loaded, setLoaded] = useState(false);
 
   const handleClick = () => {
-    if (!idle && img) router.push(`/video/${src}`);
+    if (!idle) router.push(`/video/${src}`);
   };
   return (
     <Box>

@@ -19,9 +19,9 @@ export default function AdminPage({ events }) {
   const [form, setForm] = useState({
     title: "",
     giorno: "",
-    date: "2020-12-25",
+    date: "2020-12-15",
     video: "https://streamable.com/e/",
-    thumb: null,
+    //thumb: null,
   });
   const [loading, setLoading] = useState(true);
   const [logged, setLogged] = useState(false);
@@ -58,7 +58,7 @@ export default function AdminPage({ events }) {
     console.log("Saving event");
     setLoading(false);
 
-    if (form.video && form.thumb) {
+    if (form.video) {
       /*
       //Save video
       const storageRefVideo = storage.ref("video/" + form.video.name);
@@ -69,7 +69,7 @@ export default function AdminPage({ events }) {
 
       console.log(downloadUrlVideo);
 
-      */
+      
 
       //Save image
       const storageRefImage = storage.ref("thumb/" + form.thumb.name);
@@ -80,6 +80,8 @@ export default function AdminPage({ events }) {
 
       console.log(downloadUrlImage);
 
+      */
+
       //Write to DB
 
       firestore
@@ -88,7 +90,8 @@ export default function AdminPage({ events }) {
           title: form.title,
           giorno: form.giorno,
           src: form.video,
-          thumbnail: downloadUrlImage,
+          //thumbnail: downloadUrlImage,
+          pubblicazione: new Date(Date.parse(form.date)),
         })
         .then(function (docRef) {
           console.log("Document written with ID: ", docRef.id);
@@ -107,12 +110,6 @@ export default function AdminPage({ events }) {
     console.log(form);
   };
 
-  const loadFile = (e) => {
-    let file = e.target.files[0];
-    setForm({ ...form, [e.target.name]: file });
-    console.log(form);
-  };
-
   const checkLogin = async () => {
     console.log("Check Login: ");
 
@@ -123,7 +120,7 @@ export default function AdminPage({ events }) {
       .get();
 
     doc.forEach((user) => {
-      console.log(user);
+      //console.log(user);
       setUser(user.data().nome);
     });
     //Set logged
@@ -131,6 +128,14 @@ export default function AdminPage({ events }) {
 
   const changeToken = (e) => {
     setToken(e.target.value);
+  };
+
+  const changeDate = (e) => {
+    setForm({
+      ...form,
+      date: e.target.value,
+    });
+    console.log(form);
   };
   return (
     <Box>
@@ -193,7 +198,7 @@ export default function AdminPage({ events }) {
                   name="date"
                   type="date"
                   w="50%"
-                  onChange={handleChange}
+                  onChange={changeDate}
                   value={form.date}
                 />
                 <Text>Video</Text>
@@ -203,9 +208,6 @@ export default function AdminPage({ events }) {
                   value={form.video}
                   onChange={handleChange}
                 />
-                <Text>Miniatura</Text>
-                <Input name="thumb" type="file" w="50%" onChange={loadFile} />
-
                 <Flex>
                   <Spacer></Spacer>
                   <Spinner hidden={loading}></Spinner>
