@@ -21,6 +21,7 @@ import Pic from "../pic/pic.component";
 import { firestore, storage } from "../../firebase/firebase.config";
 import { useEffect, useState } from "react";
 import useFirestore from "../../hooks/useFirestore";
+import Pellicola from "../pellicola/pellicola.component";
 
 function Pics(props) {
   const { title } = props;
@@ -46,7 +47,7 @@ function Pics(props) {
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
           {docs &&
             docs.map((pic) => (
-              <Pic
+              <Pellicola
                 key={pic.id}
                 img={pic.thumbnail}
                 title={pic.title}

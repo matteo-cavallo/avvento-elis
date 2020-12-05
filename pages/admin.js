@@ -20,7 +20,7 @@ export default function AdminPage({ events }) {
     title: "",
     giorno: "",
     date: "2020-12-25",
-    video: null,
+    video: "https://streamable.com/e/",
     thumb: null,
   });
   const [loading, setLoading] = useState(true);
@@ -197,7 +197,12 @@ export default function AdminPage({ events }) {
                   value={form.date}
                 />
                 <Text>Video</Text>
-                <Input name="video" w="50%" onChange={handleChange} />
+                <Input
+                  name="video"
+                  w="50%"
+                  value={form.video}
+                  onChange={handleChange}
+                />
                 <Text>Miniatura</Text>
                 <Input name="thumb" type="file" w="50%" onChange={loadFile} />
 

@@ -41,7 +41,13 @@ export default function Pic(props) {
       >
         <AspectRatio ratio={1}>
           {!idle ? (
-            <Box w="100%" border="2px" borderColor="gray.100" boxShadow="inner">
+            <Box
+              w="100%"
+              border="2px"
+              borderColor="gray.100"
+              boxShadow="inner"
+              bgColor="gray.100"
+            >
               <Flex flexDirection="column" w="100%" h="100%">
                 <Box>
                   <Flex p={1}>
@@ -51,7 +57,9 @@ export default function Pic(props) {
                 </Box>
 
                 <Center flex="1">
-                  <Heading bgColor="red.300">🎄{day} dic</Heading>
+                  <Heading p={2} bgColor="red.300">
+                    🎄{day} dic
+                  </Heading>
                 </Center>
               </Flex>
             </Box>
