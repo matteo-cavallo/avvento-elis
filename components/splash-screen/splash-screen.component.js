@@ -7,6 +7,7 @@ import {
   Button,
   Spinner,
   Text,
+  Fade,
 } from "@chakra-ui/react";
 
 import { useState } from "react";

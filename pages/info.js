@@ -54,7 +54,7 @@ export default function InfoPage() {
           <Divider w="80%" mt={4}></Divider>
         </Center>
         <Text fontSize="md">
-          v0.2 - Powered by <a></a>@matteocavallo
+          v1.0 - Powered by <a></a>@matteocavallo
         </Text>
       </Box>
     </Box>

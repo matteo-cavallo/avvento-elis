@@ -9,6 +9,7 @@ import {
   Icon,
   Image,
   Skeleton,
+  SlideFade,
   Text,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -17,6 +18,7 @@ import Header from "../../components/header/header.component";
 import { firestore } from "../../firebase/firebase.config";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 import useLikes from "../../hooks/useLike";
+import { useToast } from "@chakra-ui/react";
 
 export default function VideoPage() {
   const router = useRouter();
@@ -26,6 +28,9 @@ export default function VideoPage() {
   const [like, setLike] = useState(false);
 
   const likes = useLikes(id);
+  const toast = useToast();
+
+  console.log(id);
 
   useEffect(() => {
     fetchVideo();
@@ -42,15 +47,11 @@ export default function VideoPage() {
     }
     let ids = JSON.parse(localStorage.getItem("likes")).ids;
 
-    console.log("Id: ", id);
-    console.log("Video liked: ", ids);
-
     if (ids.includes(id)) {
       setLike(true);
     } else {
       setLike(false);
     }
-    console.log("Video is liked: ", like);
   });
 
   const handleLike = async () => {
@@ -85,9 +86,22 @@ export default function VideoPage() {
           })
           .then(() => console.log("Aggiunto like"));
       }
+      toast({
+        title: "Mi piace aggiunto.",
+        description: "Sei sulla strada del successo",
+        status: "success",
+        duration: 2500,
+        isClosable: true,
+      });
     } else {
       console.log("Already liked");
-      alert("Hai già messo mi piace!");
+      toast({
+        title: "Hai già messo mi piace.",
+        description: "Puoi mettere mi piace una volta sola",
+        status: "success",
+        duration: 2500,
+        isClosable: true,
+      });
     }
   };
 
@@ -97,7 +111,7 @@ export default function VideoPage() {
         <Header></Header>
       </Box>
       <Center flex={1} bgColor="wheat">
-        <Box bgColor="white" p={2} h="90%" rounded="md" boxShadow="lg">
+        <Box bgColor="white" p={2} h="80%" rounded="md" boxShadow="lg">
           <Flex flexDirection="column" h="100%">
             <Box p={2}>
               <Heading fontSize="md">

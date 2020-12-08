@@ -7,54 +7,104 @@ import {
   List,
   ListItem,
   ListIcon,
+  UnorderedList,
+  Text,
+  Slide,
+  SlideFade,
+  Flex,
+  Center,
+  HStack,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
+import { CheckIcon, LinkIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
 
 import { firestore, storage } from "../../firebase/firebase.config";
 import { useEffect, useState } from "react";
 import useFirestore from "../../hooks/useFirestore";
+import useClassifica from "../../hooks/useClassifica";
 import Pellicola from "../pellicola/pellicola.component";
 import { MdCheckCircle } from "react-icons/md";
+import { motion } from "framer-motion";
 
 function Pics(props) {
   const { title } = props;
 
   const { docs } = useFirestore("video");
+  const { classifica } = useClassifica();
+
+  const pos = ["🥇", "🥈", "🥉"];
 
   return (
     <Stack p={4} spacing={6}>
       <Box>
         <Heading size="lg">🤩 Ultime Novità</Heading>
-        <Box bgColor="whitesmoke" rounded="lg" my={2} p={4}>
-          <List>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} color="green.500" />
-              Aggiunta la possibilità di mettere mi piace!
-            </ListItem>
-            <ListItem>
-              <ListIcon as={MdCheckCircle} color="green.500" />
-              Alcuni piccoli miglioramenti della grafica.
-            </ListItem>
-          </List>
-        </Box>
+        <SlideFade in={true}>
+          <Box bgColor="whitesmoke" rounded="lg" my={2} p={4} boxShadow="md">
+            <List>
+              <ListItem>
+                <ListIcon as={MdCheckCircle} color="green.500" />
+                Aggiunta la possibilità di mettere mi piace!
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdCheckCircle} color="green.500" />
+                Aggiunta la classifica dei bomber.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdCheckCircle} color="green.500" />
+                Alcuni piccoli miglioramenti della grafica.
+              </ListItem>
+            </List>
+          </Box>
+        </SlideFade>
       </Box>
       <Box>
         <Heading size="lg">📆 Calendario</Heading>
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
           {docs &&
             docs.map((pic) => (
-              <Pellicola
-                key={pic.id}
-                img={pic.thumbnail}
-                title={pic.title}
-                src={pic.id}
-                day={pic.giorno}
-                url={pic.src}
-                idle={false}
-              />
+              <motion.div
+                whileHover={{
+                  scale: 1.1,
+                  y: -10,
+                }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+              >
+                <Pellicola
+                  key={pic.id}
+                  img={pic.thumbnail}
+                  title={pic.title}
+                  src={pic.id}
+                  day={pic.giorno}
+                  url={pic.src}
+                  idle={false}
+                  loaded
+                />
+              </motion.div>
             ))}
         </SimpleGrid>
+      </Box>
+      <Box>
+        <Heading size="lg">🏁 Classifica</Heading>
+        <Box my={2} p={4} bgColor="whitesmoke" rounded="lg" boxShadow="md">
+          {classifica.map((doc, index) => {
+            return (
+              <Flex>
+                <Center p={2}>
+                  <Heading>{pos[index]}</Heading>
+                </Center>
+                <HStack flex={2} p={2}>
+                  <Divider orientation="vertical"></Divider>
+                  <Box w="100%">
+                    <Heading size="lg">{doc.likes} 👍🏻</Heading>
+                    <Text size="lg">{doc.title}</Text>
+                  </Box>
+                </HStack>
+              </Flex>
+            );
+          })}
+        </Box>
       </Box>
       <Box>
         <Heading mb={4} size="lg">
