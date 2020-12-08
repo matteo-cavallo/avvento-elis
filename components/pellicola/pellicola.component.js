@@ -54,12 +54,12 @@ export default function Pellicola(props) {
             bgColor="gray.100"
             h=""
             boxShadow="inner"
-            bgImage="url('https://images.pexels.com/photos/3325717/pexels-photo-3325717.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')"
+            bgImage="url('https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snowing-illustration-background-scenecool-forestsnowingwinter-background-image_65456.jpg')"
             bgPosition="center"
           >
             <Stack>
               <Heading
-                bgColor="red.300"
+                bgColor="red.400"
                 textAlign="center"
                 size="s"
                 p={1}
