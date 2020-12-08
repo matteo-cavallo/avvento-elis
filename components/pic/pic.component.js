@@ -38,6 +38,7 @@ export default function Pic(props) {
         border="1px"
         borderColor="gray.200"
         maxW="300px"
+        bgColor="whitesmoke"
       >
         <AspectRatio ratio={1}>
           {!idle ? (

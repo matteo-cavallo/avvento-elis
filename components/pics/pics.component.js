@@ -3,17 +3,10 @@ import {
   Divider,
   Heading,
   Stack,
-  Wrap,
-  WrapItem,
-  Text,
-  Center,
-  TagLeftIcon,
-  Tag,
-  TagLabel,
-  Flex,
-  pseudoSelectors,
-  Grid,
   SimpleGrid,
+  List,
+  ListItem,
+  ListIcon,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
@@ -22,6 +15,7 @@ import { firestore, storage } from "../../firebase/firebase.config";
 import { useEffect, useState } from "react";
 import useFirestore from "../../hooks/useFirestore";
 import Pellicola from "../pellicola/pellicola.component";
+import { MdCheckCircle } from "react-icons/md";
 
 function Pics(props) {
   const { title } = props;
@@ -30,6 +24,21 @@ function Pics(props) {
 
   return (
     <Stack p={4} spacing={6}>
+      <Box>
+        <Heading size="lg">🤩 Ultime Novità</Heading>
+        <Box bgColor="whitesmoke" rounded="lg" my={2} p={4}>
+          <List>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Aggiunta la possibilità di mettere mi piace!
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Alcuni piccoli miglioramenti della grafica.
+            </ListItem>
+          </List>
+        </Box>
+      </Box>
       <Box>
         <Heading size="lg">📆 Calendario</Heading>
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
