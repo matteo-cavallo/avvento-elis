@@ -8,7 +8,10 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <Head>
         <title>Avvento ELIS 🎄</title>
-        <meta name="description"> 2º Anno ELIS Digital University</meta>
+        <meta
+          name="description"
+          content="2º Anno ELIS Digital University"
+        ></meta>
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
