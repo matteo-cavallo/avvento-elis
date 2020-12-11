@@ -30,8 +30,6 @@ export default function VideoPage() {
   const likes = useLikes(id);
   const toast = useToast();
 
-  console.log(id);
-
   useEffect(() => {
     fetchVideo();
   }, []);

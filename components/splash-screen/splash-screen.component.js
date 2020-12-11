@@ -24,25 +24,26 @@ export default function SplashScreen({ handleClick }) {
   };
 
   return (
-    <Box>
-      <Center h="100vh" bgColor="wheat">
-        <Box maxW="32rem" textAlign="center">
-          <Heading mb={8}>Avvento dell'Elis 🎄</Heading>
-          <Container>
-            Benvenuti, ragazze e ragazzi all'interno del calendario dell'avvento
-            dell'Elis.
-          </Container>
-          <Button
-            leftIcon={<Spinner hidden={spinner} color="white.500" />}
-            size="lg"
-            colorScheme="green"
-            mt="24px"
-            onClick={close}
-          >
-            Entra
-          </Button>
-        </Box>
-      </Center>
-    </Box>
+    <Center bgColor="wheat" h="100vh">
+      <Box maxW="32rem" textAlign="center">
+        <Heading>Avvento 2020 🎄</Heading>
+        <Heading mb={8} size="sm">
+          2º Anno ELIS Digital University
+        </Heading>
+        <Container>
+          Benvenuti, ragazze e ragazzi all'interno del calendario dell'avvento
+          dell'ELIS.
+        </Container>
+        <Button
+          leftIcon={<Spinner hidden={spinner} color="white.500" />}
+          size="lg"
+          colorScheme="green"
+          mt="24px"
+          onClick={close}
+        >
+          Entra
+        </Button>
+      </Box>
+    </Center>
   );
 }

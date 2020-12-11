@@ -12,7 +12,7 @@ export default function Header() {
       <Flex p={2}>
         <Box p="2">
           <Heading onClick={() => handleClick("/home")} size="md">
-            Avvento Elis 🎄
+            Avvento ELIS 🎄
           </Heading>
         </Box>
         <Spacer />

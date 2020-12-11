@@ -90,7 +90,7 @@ function Pics(props) {
         <Box my={2} p={4} bgColor="whitesmoke" rounded="lg" boxShadow="md">
           {classifica.map((doc, index) => {
             return (
-              <Flex>
+              <Flex key={index}>
                 <Center p={2}>
                   <Heading>{pos[index]}</Heading>
                 </Center>
