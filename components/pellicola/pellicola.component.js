@@ -18,8 +18,12 @@ import { useRouter } from "next/router";
 import { BsFillPlayFill, BsOctagon } from "react-icons/bs";
 
 export default function Pellicola(props) {
-  const { title, img, src, idle, url, day, loaded } = props;
+  const { title, img, src, idle, url, day, loaded, theme } = props;
   const router = useRouter();
+
+  const image = theme
+    ? "https://www.earlham.lib.ia.us/theme_resources/christmassnowred/image"
+    : "https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snowing-illustration-background-scenecool-forestsnowingwinter-background-image_65456.jpg";
 
   // Rotazione della fotografia in gradi
   const rotation = 2;
@@ -55,12 +59,13 @@ export default function Pellicola(props) {
               bgColor="gray.100"
               h=""
               boxShadow="inner"
-              bgImage="url('https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snowing-illustration-background-scenecool-forestsnowingwinter-background-image_65456.jpg')"
+              bgImage={`url(${image})`}
               bgPosition="center"
+              bgSize="contain"
             >
               <Stack>
                 <Heading
-                  bgColor="red.400"
+                  bgColor={theme ? "green.300" : "red.400"}
                   textAlign="center"
                   size="s"
                   p={1}
@@ -70,7 +75,7 @@ export default function Pellicola(props) {
                 </Heading>
                 <Heading
                   size="md"
-                  bgColor="red.300"
+                  bgColor={theme ? "green.300" : "red.400"}
                   color="white"
                   textAlign="center"
                 >

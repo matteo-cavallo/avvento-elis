@@ -59,6 +59,7 @@ function Pics(props) {
             src={docs[0].id}
             day={docs[0].giorno}
             url={docs[0].src}
+            theme={docs[0].theme}
             idle={false}
             loaded
           />
@@ -68,7 +69,7 @@ function Pics(props) {
         <Heading size="lg">📆 Calendario</Heading>
         <SimpleGrid columns={2} pt={4} spacing="20px" minChildWidth="120px">
           {docs &&
-            docs.map((pic) => (
+            docs.slice(1).map((pic) => (
               <motion.div
                 whileHover={{
                   scale: 1.1,
@@ -86,6 +87,7 @@ function Pics(props) {
                   day={pic.giorno}
                   url={pic.src}
                   idle={false}
+                  theme={docs.theme}
                   loaded
                 />
               </motion.div>
