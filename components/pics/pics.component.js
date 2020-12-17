@@ -37,25 +37,32 @@ function Pics(props) {
   return (
     <Stack p={4} spacing={6}>
       <Box>
-        <Heading size="lg">🤩 Ultime Novità</Heading>
+        <Heading size="lg">🤩 News</Heading>
         <SlideFade in={true}>
           <Box bgColor="whitesmoke" rounded="lg" my={2} p={4} boxShadow="md">
             <List>
               <ListItem>
                 <ListIcon as={MdCheckCircle} color="green.500" />
-                Aggiunta la possibilità di mettere mi piace!
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="green.500" />
-                Aggiunta la classifica dei bomber.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="green.500" />
-                Alcuni piccoli miglioramenti della grafica.
+                Sta per succedere qualcosa...
               </ListItem>
             </List>
           </Box>
         </SlideFade>
+      </Box>
+      <Box>
+        <Heading size="lg">😍 Da non perdere!!!</Heading>
+        {docs[0] && (
+          <Pellicola
+            key={docs[0].id}
+            img={docs[0].thumbnail}
+            title={docs[0].title}
+            src={docs[0].id}
+            day={docs[0].giorno}
+            url={docs[0].src}
+            idle={false}
+            loaded
+          />
+        )}
       </Box>
       <Box>
         <Heading size="lg">📆 Calendario</Heading>

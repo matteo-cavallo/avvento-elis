@@ -3,6 +3,7 @@ import { firestore } from "../firebase/firebase.config";
 
 const useFirestore = (collection) => {
   const [docs, setDocs] = useState([]);
+  const [prima, setPrima] = useState(null);
 
   useEffect(() => {
     const unsub = firestore
@@ -17,10 +18,12 @@ const useFirestore = (collection) => {
         });
         setDocs(documents);
       });
+
+    setPrima(docs[0]);
     return () => unsub();
   }, [collection]);
 
-  return { docs };
+  return { docs, prima };
 };
 
 export default useFirestore;

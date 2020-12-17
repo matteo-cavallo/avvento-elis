@@ -22,7 +22,7 @@ export default function Pellicola(props) {
   const router = useRouter();
 
   // Rotazione della fotografia in gradi
-  const rotation = Math.floor(Math.random() * 6);
+  const rotation = 2;
 
   const handleClick = () => {
     if (!idle) router.push(`/video/${src}`);

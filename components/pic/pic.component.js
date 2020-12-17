@@ -19,7 +19,7 @@ export default function Pic(props) {
   const router = useRouter();
 
   // Rotazione della fotografia in gradi
-  const rotation = Math.floor(Math.random() * 6);
+  const rotation = 2;
   const [loaded, setLoaded] = useState(false);
 
   const handleClick = () => {
