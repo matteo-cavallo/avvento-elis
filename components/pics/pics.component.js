@@ -132,7 +132,7 @@ function Pics(props) {
         </Heading>
         <Pic
           idle
-          img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2FDAD899C3-AEFE-487E-984D-EC0087F3CB86_1_105_c.jpeg?alt=media&token=61bd0174-7449-408b-8218-be41ff0b90f0"
+          img="mypic.jpg"
           numero={1}
           title="Matteo Cavallo (matteomad)"
         />
