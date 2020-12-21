@@ -21,9 +21,8 @@ export default function Pellicola(props) {
   const { title, img, src, idle, url, day, loaded, theme } = props;
   const router = useRouter();
 
-  const image = theme
-    ? "https://www.earlham.lib.ia.us/theme_resources/christmassnowred/image"
-    : "https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snowing-illustration-background-scenecool-forestsnowingwinter-background-image_65456.jpg";
+  const image =
+    "https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snowing-illustration-background-scenecool-forestsnowingwinter-background-image_65456.jpg";
 
   // Rotazione della fotografia in gradi
   const rotation = 2;
