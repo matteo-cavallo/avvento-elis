@@ -14,6 +14,7 @@ import {
   Flex,
   Center,
   HStack,
+  Image,
 } from "@chakra-ui/react";
 import { CheckIcon, LinkIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
@@ -37,15 +38,18 @@ function Pics(props) {
   return (
     <Stack p={4} spacing={6}>
       <Box>
-        <Heading size="lg">🤩 News</Heading>
         <SlideFade in={true}>
           <Box bgColor="whitesmoke" rounded="lg" my={2} p={4} boxShadow="md">
-            <List>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="green.500" />
-                Sta per succedere qualcosa...
-              </ListItem>
-            </List>
+            <Flex>
+              <Box>
+                <Heading flex={2}>Buon Natale ❤️</Heading>
+                <Text color="gray.600" my={2} p={2}>
+                  "Christmas is most truly Christmas when we celebrate it by
+                  giving the light of love to those who need it most."
+                </Text>
+              </Box>
+              <Image src="santaclous.svg" maxW="80px" />
+            </Flex>
           </Box>
         </SlideFade>
       </Box>
