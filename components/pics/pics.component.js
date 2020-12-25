@@ -48,7 +48,7 @@ function Pics(props) {
                   giving the light of love to those who need it most."
                 </Text>
               </Box>
-              <Image src="santaclous.svg" maxW="80px" />
+              <Image src="santaclous.svg" maxH="150px" />
             </Flex>
           </Box>
         </SlideFade>
