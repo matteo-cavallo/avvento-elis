@@ -54,7 +54,10 @@ export default function InfoPage() {
           <Divider w="80%" mt={4}></Divider>
         </Center>
         <Text fontSize="md">
-          v1.0 - Powered by <a></a>@matteocavallo
+          v1.0 - Powered by{" "}
+          <Link href="https://matteomad.vercel.app/" isExternal>
+            @matteocavallo
+          </Link>
         </Text>
       </Box>
     </Box>

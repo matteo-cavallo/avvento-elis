@@ -15,6 +15,7 @@ import {
   Center,
   HStack,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import { CheckIcon, LinkIcon } from "@chakra-ui/icons";
 import Pic from "../pic/pic.component";
@@ -127,19 +128,14 @@ function Pics(props) {
           idle
           img="https://firebasestorage.googleapis.com/v0/b/avvento-elis.appspot.com/o/thumbnails%2FWhatsApp%20Image%202020-12-05%20at%2020.31.10.jpeg?alt=media&token=1b704ecb-93c3-4906-a182-f9a0799d43ed"
           numero={1}
-          title="Lorenzo Manoni (BigHands)"
+          title="Lorenzo Manoni"
         />
       </Box>
-      <Box>
+      <Box onClick={() => window.open("https://matteomad.vercel.app/")}>
         <Heading mb={4} size="lg">
           👨🏻‍💻 Sviluppato da
         </Heading>
-        <Pic
-          idle
-          img="mypic.jpg"
-          numero={1}
-          title="Matteo Cavallo (matteomad)"
-        />
+        <Pic idle img="mypic.jpg" numero={1} title="@matteocavallo" />
       </Box>
     </Stack>
   );
